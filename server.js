@@ -1,7 +1,7 @@
 const fs = require("fs");
 const express = require("express");
 const server = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 server.use(express.static("public"));
 
@@ -13,4 +13,3 @@ server.use("/api/dashboard", function (req, res) {
 server.listen(PORT, function () {
   console.log(`Server is now listening on port ${PORT}`);
 });
-
